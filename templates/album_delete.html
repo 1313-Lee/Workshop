@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+    {% if user.id == Image.author.id %}
+    <h1>Delete Album</h1>
+    <form action="" method="Image">{% csrf_token %}
+        <p>Are you sure you want to delete "{{ Image.title }}"?</p>
+    <input type="submit" value="Confirm">
+    </form >
+    {% else %}
+    <p>You are not authorized to delete this album!</p>
+    {% endif %}
+{% else %}
+<p>Please Log In</p>
+{% endif %}
+{% endblock content %}

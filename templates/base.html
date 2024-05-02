@@ -1,0 +1,71 @@
+<html>
+    {% load static %}
+    <head>
+        <title>My Django Blogs</title>
+        <link href="{% static 'base.css' %}" rel="stylesheet" >
+    </head>
+    <body >
+    <div >
+        <header>
+        <div class="header">
+            <h1><a href = "{% url 'home' %}">Lee's Workshop</a></h1>
+        </div>
+        
+        <div class="topnav">
+            <a href = "{% url 'home' %}">Home</a>
+            <a href = "{% url 'blog' %}">Blogs</a>
+            <a href="{% url 'album' %}">Albums</a>
+            <a href="{% url 'topic' %}">Topics</a>
+        </div>
+
+        <hr>
+        </header>
+        <div>
+        <div class="column side">
+            <h1>Profile</h1>
+            <div class="card center left">
+        {% if user.is_authenticated %}
+        <img class="default-image card" src="/media/images/profile.jpg" alt="Default Profile Picture">
+            <p> Welcome {{user.username}}</p>
+            <div>
+            <div class="button">
+                <a href="{% url 'logout' %}">Log Out</a>
+            </div>
+        {% else %}
+            <p>You are not logged in.</p>
+            <div>
+            <div class="button">
+                <a href="{% url 'login' %}">Log In</a> 
+            </div>
+            <div class="button">
+                <a href="{% url 'signup' %}">Sign Up</a>
+            </div>
+            {% endif %}
+            </div>
+        </div>
+        </div>
+        <div class="column middle excp">
+        {% block content %}{% endblock content %}
+        </div>
+        <div class="column side">
+            {% if user.is_authenticated %}
+            <h1>Activities</h1>
+            <div class="card center right">
+            <div class="button">
+                <a href="{% url 'blog_new' %}">+ New Blog Post</a>
+            </div>
+            <div class="button">
+                <a href="{% url 'album_new' %}">+ New Album Images</a>
+            </div>
+        {% else %}
+            <a>  </a>
+        {% endif %}
+        </div>
+        </div>
+        </div>
+        <div class="footer">
+            <p> Copyright <span>&copy;</span> 2024, Stanlie Joannis</p>
+        </div>
+    </body>
+</html>
+

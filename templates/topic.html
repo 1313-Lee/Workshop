@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Blog Topic</h1>
+<ul class="no-bullets">
+    {% for topic in topic_list %}
+    <div class="card">
+    <li>Topic: {{ topic }} </li>
+    <ol>
+        {% for post in topic.post_set.all %}
+        <a href = "{% url 'blog_detail' post.pk %}">
+        <li>{{post.title}}</li></a>
+        {% endfor %}
+    </ol>
+    </div>
+    {% endfor %}
+</ul>
+{% endblock content %}

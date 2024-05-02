@@ -1,0 +1,163 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    padding: 10px;
+    background: #ece6ff;
+    background-image: linear-gradient(to bottom right, #ecb6ff, #ecf6ff);
+  }
+  
+  /* Style the header */
+  .header {
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    background: #DCFFFB;
+  }
+
+  .header h1 {
+    font-family: Chalkduster, fantasy;
+    font-size: 100px;
+  }
+
+  
+  /* Style the top navigation bar */
+  .topnav {
+    overflow: hidden;
+    background-color:#b29aff;
+  }
+  
+  /* Style the topnav links */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f9ffe6;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change color on hover */
+  .topnav a:hover {
+    background-color: #ece6ff;
+    color: black;
+    border-radius: 10px 10px 0px 0px;
+  }
+
+ .button {
+    width: 70%;
+    margin:auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    background-color: #ffe0f1;
+  }
+
+  .button a {
+    padding: 10px;
+    display: block;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+  }
+ 
+  .button a:hover {
+    color: black;
+    border-radius: 15px;
+    background-color: #fff7fc;
+  }
+
+  /* Create three unequal columns that floats next to each other */
+  .column {
+    float: left;
+    padding: 10px;
+  }
+  
+  /* Left and right column */
+  .column.side {
+    width: 20%;
+  }
+  
+  /* Middle column */
+  .column.middle {
+    width: 50%;
+    margin-bottom: 100px;
+  }
+
+  .card {
+    background-color: #faffe6;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    width: 100%;
+  }
+
+  .card.excp {
+    margin-bottom: 50px;
+  }
+
+  .card.center {
+    text-align: center;
+  }
+
+  .card.left {
+    background-color: #ffece6;
+  }
+
+  .card.right {
+    background-color: #e6ffec;
+  }
+
+
+  /* Clear floats after the columns */
+  .row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column.side, .column.middle {
+      width: 100%;
+    }
+  }
+ /* Images */
+ .default-image {
+    width: 70%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  /* Footer */
+ .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#b29aff;
+    color: white;
+    text-align: center;
+  }
+
+ div h2 a {
+    text-decoration: none;
+    color:#b29aff;
+    font-weight: bold;
+ }
+ 
+ header h1 a {
+    text-decoration: none;
+    color:#b29aff;
+    font-weight: bold;
+    
+ }
+ 
+
+ ul.no-bullets {
+    list-style-type: none;
+ }

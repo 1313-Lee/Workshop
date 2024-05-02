@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+    {% if user.id == post.author.id %}
+    <h2>Edit post</h2>
+    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+        {{ form.as_p }}
+    <input type="submit" value="Update">
+    </form >
+    {% else %}
+    <p>You are not authorized to edit this blog!</p>
+    {% endif %}
+{% else %}
+<p>Please Log In</p>
+{% endif %}
+{% endblock content %}
+

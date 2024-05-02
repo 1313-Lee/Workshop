@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Home</h1>
+<div class="card">
+    <div class="button">
+        <a href = "{% url 'blog' %}">Blogs</a>
+    </div>
+    <div class="button">
+        <a href="{% url 'album' %}">Albums</a>
+    </div>
+    <div class="button">
+        <a href="{% url 'topic' %}">Topics</a>
+    </div>
+</div>
+{% endblock content %}

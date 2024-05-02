@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="Image-entry card">
+    <h2>{{ image.title }}</h2>
+    <h3> By {{ image.author }}</h3>
+        <p>topic: {{ image.topic }}</p>
+        <p>created: {{ image.date }}</p>
+        <br>
+    {% if image.image1 %}
+    <img src="{{image.image1.url}}" width=500>
+    {% endif %}
+    {% if image.image2 %}
+    <img src="{{image.image2.url}}" width=500>
+    {% endif %}
+    {% if image.image3 %}
+    <img src="{{image.image3.url}}" width=500>
+    {% endif %}
+    {% if image.image4 %}
+    <img src="{{image.image4.url}}" width=500>
+    {% endif %}
+    {% if image.image5 %}
+    <img src="{{image.image5.url}}" width=500>
+    {% endif %}
+    {% if image.image6 %}
+    <img src="{{image.image6.url}}" width=500>
+    {% endif %}
+    {% if image.image7 %}
+    <img src="{{image.image7.url}}" width=500>
+    {% endif %}
+    {% if image.image8 %}
+    <img src="{{image.image8.url}}" width=500>
+    {% endif %}
+    {% if image.image9 %}
+    <img src="{{image.image9.url}}" width=500>
+    {% endif %}
+</div>
+<div class="card">
+{% if user.is_authenticated %}
+    {% if user.id == image.author.id %}
+    <p><a href="{% url 'album_edit' image.pk %}">+ Edit Album Images</a></p>
+    <p><a href="{% url 'album_delete' image.pk %}">+ Delete Album</a></p>
+    {% else %}
+    <p>You are not authorized to edit this album!</p>
+    {% endif %}
+{% else %}
+<p>Please Log In</p>
+{% endif %}
+</div>
+{% endblock content %}
